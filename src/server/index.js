@@ -1,8 +1,8 @@
-/* Setup env for API keys */
+/* env for APIs */
 const dotenv = require('dotenv');
 dotenv.config();
 
-/* setup global variables and initialize express */
+/* global variables and express initialisation */
 const fetch = require("node-fetch");
 const express = require('express');
 const app = express();
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 
 app.post('/getLocation', async(req, res) => {
-    const url = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=${process.env.GEOCODES_NAME}`;
+    const url = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=${process.env.GeonamesKey}`;
     const response = await fetch(url);
     try {
         const data = await response.json();
@@ -49,7 +49,7 @@ app.post('/getLocation', async(req, res) => {
 })
 
 app.post('/getWeather', async(req, res) => {
-    const url = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${req.body.lat}&lon=${req.body.long}&key=${process.env.WEATHERBIT_KEY}`;
+    const url = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${req.body.lat}&lon=${req.body.long}&key=${process.env.WeatherbitKey}`;
     const response = await fetch(url)
     try {
         const data = await response.json();
@@ -60,7 +60,7 @@ app.post('/getWeather', async(req, res) => {
 })
 
 app.post('/getPhoto', async(req, res) => {
-    const url = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}&image_type=photo`;
+    const url = `https://pixabay.com/api/?key=${process.env.PixabayKey}&q=${req.body.city}&image_type=photo`;
     const response = await fetch(url)
     try {
         const data = await response.json();

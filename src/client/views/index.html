@@ -10,12 +10,11 @@
 <div id = "full">
     <div id="header">
         <h1>TRAVEL APP</h1>
-
-        <p id="cur_date">Date/Time: <span id="datetime"></span></p>
+        <p id="cur_date"><u>Today</u> : <span id="datetime"></span>
         <script>
-        var dt = new Date();
-        document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+        document.write(new Date().toLocaleDateString());
         </script>
+        </p>
     </div>
     
     <div id="main">
@@ -35,7 +34,7 @@
                     <!-- name="return" -->
                 </div>
                 <div class="form__enter">
-                    <input type="submit" value="Submit" class="form__button">
+                    <input type="submit" value="SUBMIT" class="form__button">
                 </div>
             </form>  
         </div>

@@ -1,7 +1,7 @@
 async function handleSubmit(that) {
     let projectData = {};
 
-    /* Validate user form input */
+    /* user input */
     let userData = {
         from: that.from.value,
         startDate: that.depart.value,
@@ -9,7 +9,7 @@ async function handleSubmit(that) {
         endDate: that.return.value
     };
     await Client.validateInput(userData);
-    /* Get countdown to trip and total duration of trip, add to projectData object */
+    /* Get countdown and duration of trip*/
     projectData = Client.handleDates(userData.startDate, userData.endDate);
 
     /* data from Geonames */
@@ -18,7 +18,6 @@ async function handleSubmit(that) {
     /* weatherdata */
     const weather = await Client.getData('/getWeather', { lat: coordinates.lat, long: coordinates.long });
     
-    /* If trip is within 16 days, get forecast, otherwise get current weather */
     let forecastDay = projectData.countdown;
     
     const weatherData = {
@@ -28,11 +27,11 @@ async function handleSubmit(that) {
         forecast: weather.data[forecastDay].weather.description
     }
 
-    /* Get image from Pixabay */
+    /* image form Pixabay */
     const image = await Client.getData('/getPhoto', { city: userData.to });
     projectData.image_url = image.hits[0].largeImageURL;
 
-    /* add weatherData to the projectData object and update UI */
+    /* add weatherData and update UI */
     Object.assign(projectData, weatherData);
     Client.updateUI(projectData);    
 }

@@ -12,6 +12,6 @@ describe("Testing the input validation function", () => {
             startDate: "20-11-2020",
             endDate: "21-11-2020"
         }
-        expect(validateInput(In)).toBe(false);
+        expect(validateInput(In)).toBe(true);
     })
 });

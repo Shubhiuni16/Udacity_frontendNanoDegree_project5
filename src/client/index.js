@@ -6,8 +6,8 @@ import { validateInput } from './js/validateInput';
 
 import './styles/style.scss';
 import './styles/layout.scss';
-import './styles/form.scss';
-import './styles/results.scss';
+import './styles/input.scss';
+import './styles/output.scss';
 
 export { 
     handleSubmit,
