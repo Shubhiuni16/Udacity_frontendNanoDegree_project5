@@ -1,4 +1,4 @@
-# Capstone Project: Travel App :airplane:
+# Capstone Project: Travel App :
 
 Final project of Udacity's Frontend Developer Nanodegree. 
 
@@ -7,9 +7,6 @@ This capstone project is a travel app that lets users input their trip location,
 
 Users will see how many days they have left until departure, and get the weather forecast if their trip is within the next 16 days. Otherwise, they'll see the current weather at their destination. The app also shows the total duration of their trip. 
 
-## Preview
-
-![A screenshot of the website](preview.png)
 
 ## Instructions
 
@@ -58,9 +55,3 @@ Tests for this app have been implemented using Jest. To run tests, use this comm
 npm run test
 ```
 
-## Author
-- Eline Jacobse
-
-## Acknowledgements
-- Background by [Webgradients](https://webgradients.com/)
-- Used this post on [StackOverflow](https://stackoverflow.com/questions/37487826/send-form-data-to-javascript-on-submit) to handle the form submit
