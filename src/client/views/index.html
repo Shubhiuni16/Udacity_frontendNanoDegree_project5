@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Travel App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<div id = "full">
+    <div id="header">
+        <h1>TRAVEL APP</h1>
+
+        <p id="cur_date">Date/Time: <span id="datetime"></span></p>
+        <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+        </script>
+    </div>
+    
+    <div id="main">
+        <div id="box">
+            <form action="javascript:;" onsubmit="Client.handleSubmit(this)" class="form" id="travel-form">
+                <div class="form__left">
+                    <label for="from">From</label>
+                    <input type="text" name="from" id="from" placeholder="City">
+                    <label for="start-date">Departure</label>
+                    <input type="date" name="depart" id="depart">
+                </div>
+                <div class="form__right">
+                    <label for="to">To</label>
+                    <input type="text" name="to" id="to" placeholder="City">
+                    <label for="end-date">Return</label>
+                    <input type="date" name="return" id="return">
+                    <!-- name="return" -->
+                </div>
+                <div class="form__enter">
+                    <input type="submit" value="Submit" class="form__button">
+                </div>
+            </form>  
+        </div>
+    </div>
+    <footer>
+        <b><em>Visit us at</em></b>
+            <div class="links">
+                <a href="https://www.facebook.com/">
+                    <img class="link-img" alt="facebook" src="https://www.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_black-512.png" />
+                </a>
+    
+                <a href="https://www.linkedin.com">
+                    <img  class="link-img" alt="linkedin" src="https://cdn3.iconfinder.com/data/icons/address-book-providers-in-black-white/512/linkedin-512.png" />
+                </a>
+    
+                <a href="https://twitter.com/explore">
+                    <img class="link-img" alt="twitter" src="https://www.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_black-512.png" />
+                </a>
+            </div>
+            <em class="name"> Designer : Deepak</em>
+    </footer>
+</div>
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+</script>
+
+</body>
+</html>
