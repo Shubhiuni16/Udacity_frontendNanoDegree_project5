@@ -4,8 +4,8 @@ async function handleSubmit(that) {
     /* user input */
     let userData = {
         from: that.from.value,
-        startDate: that.depart.value,
         to: that.to.value,
+        startDate: that.depart.value,
         endDate: that.return.value
     };
     await Client.validateInput(userData);
@@ -13,10 +13,10 @@ async function handleSubmit(that) {
     projectData = Client.handleDates(userData.startDate, userData.endDate);
 
     /* data from Geonames */
-    const coordinates = await Client.getData('/getLocation', { location: userData.to})
+    const points = await Client.getData('/getLocation', { location: userData.to})
 
     /* weatherdata */
-    const weather = await Client.getData('/getWeather', { lat: coordinates.lat, long: coordinates.long });
+    const weather = await Client.getData('/getWeather', { lat: points.lat, long: points.long });
     
     let forecastDay = projectData.countdown;
     

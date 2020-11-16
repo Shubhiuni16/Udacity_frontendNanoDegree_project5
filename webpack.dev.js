@@ -11,23 +11,21 @@ module.exports = {
     },
     mode: 'development',
     devtool: 'source-map',
-    stats: 'errors-only',
     devServer: {
         host: 'localhost',
         port: 8000,
         proxy: {
           context: () => true,
-          target: 'http://localhost:8082',
+          target: 'http://localhost:8081',
           secure: false
         }
     },
     module: {
         rules: [
-            { 
-                test: /\.(js|jsx|mjs)$/, 
-                loader: 'babel-loader',
+            {
+                test: '/\.js$/',
                 exclude: /node_modules/,
-
+                loader: "babel-loader"
             },
             {
                 test: /\.scss$/,
@@ -47,8 +45,11 @@ module.exports = {
             filename: './index.html'
         }),
         new CleanWebpackPlugin({
+            // Simulate the removal of files
             dry: true,
+            // Write Logs to Console
             verbose: true,
+            // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         })

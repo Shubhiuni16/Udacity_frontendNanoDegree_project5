@@ -1,8 +1,9 @@
 function handleDates(startDate, endDate) {
-    const today = new Date();
-    const depart = new Date(startDate);
+    
     const returnDate = new Date(endDate);
-
+    const depart = new Date(startDate);
+    const today = new Date();
+    
     let daysLeft = Math.abs(depart.getTime() - today.getTime());
     let tripDays = Math.abs(returnDate.getTime() - depart.getTime());
     

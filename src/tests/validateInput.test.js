@@ -1,10 +1,8 @@
-// Import the js file to test
+// validates inputs  
 import { validateInput } from "../client/js/validateInput";
 
-// Client side test for input validation
 describe("Testing the input validation function", () => {
     test("Testing the validateInput() function", () => {
-        // Added mock alert to suppress jest error
         window.alert = jest.fn();
         const In = 
         { 

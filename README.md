@@ -18,13 +18,13 @@ This is the capstone project for Frontend Nano degree of Udacity
 
 ### Used 3 API keys:
 This project uses the following APIs:
-- [Geonames](http://www.geonames.org/export/web-services.html)
-- [Weatherbit](https://www.weatherbit.io/account/create)
-- [Pixabay](https://pixabay.com/api/docs/)
+- [GEONAMES](http://www.geonames.org/export/web-services.html)
+- [WEATHERBIT](https://www.weatherbit.io/account/create)
+- [PIXABAY](https://pixabay.com/api/docs/)
 
 ### Functionalities Provided
 - Current date.
 - Days left for the trip.
 - No. of days of the trip.
-- Weather forcaste at the destination city.
+- Weather forecaste at the destination city.
 
